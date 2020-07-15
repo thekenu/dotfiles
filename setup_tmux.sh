@@ -15,6 +15,10 @@ installpowerline() {
   sudo pip3 install powerline-status
 }
 
+installtpm() {
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 linktmuxconf() {
   ln -s $(pwd)/.tmux.conf ~/
 
@@ -38,8 +42,16 @@ which pip3 > /dev/null && echo 'pip3 installed, moving on...' || installpip3
 # Instal powerline
 pip3 show powerline-status > /dev/null && echo 'powerline installed, moving on...' || installpowerline
 
+# Install TPM
+[[ -d "$HOME/.tmux/plugins/tpm" ]] && echo 'tpm installed, moving on' || installtpm
+
 # Copy over tmux.conf
 [[ -f "$HOME/.tmux.conf" ]] && echo '.tmux.conf exists, moving on...'|| linktmuxconf
+
+# Doesn't hurt to source .tmux.conf multiple times
+tmux source ~/.tmux.conf
+
+echo "Don't forget to prefix + I to insetall tmux plugins"
 
 echo '==================='
 echo 'Done!'
