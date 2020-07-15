@@ -25,7 +25,7 @@ linktmuxconf() {
   # Enable Powerline for Tmux:
   # https://powerline.readthedocs.io/en/latest/usage/other.html?highlight=tmux#tmux-statusline
   string=$(pip3 show powerline-status | grep Location | cut -d " " -f 2)
-  string=$string'/powerline/bindings/tmux/powerline.conf'
+  string='source '$string'/powerline/bindings/tmux/powerline.conf'
   echo $string >> $(pwd)/.tmux.conf
 }
 
