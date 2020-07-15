@@ -1,0 +1,32 @@
+{  
+  "python.jediEnabled": false,
+  "languageserver": {
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": [
+        "build/"
+      ],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++"],
+      "rootPatterns": [".ccls", "compile_commands.json", "compile_commands2.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": "/tmp/ccls"
+         }
+       }
+    }
+ },
+ "explorer.width": 30,
+ "explorer.icon.enableNerdfont": true,
+ "explorer.previewAction.onHover": false,
+ "explorer.keyMappings": {
+   "<cr>": ["expandable?", "expand", "open"],
+   "v": "open:vsplit"
+ }
+}
