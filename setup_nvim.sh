@@ -87,7 +87,5 @@ nvim --headless +PlugInstall +CocUpdate +qall > /dev/null 2>&1
 # Create symbolic link to nvim folder
 [[ -d "$HOME/.config/nvim" ]] && echo 'nvim folder exists, moving on...'|| linknvim
 
-echo "Don't forget to install and activate a font from here: https://github.com/ryanoasis/nerd-fonts"
-
 echo '==================='
 echo 'Done!'
