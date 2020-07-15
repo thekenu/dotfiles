@@ -19,7 +19,7 @@ installnode() {
 
 installfzf() {
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+  ~/.fzf/install --all
 }
 
 installripgrep() {
@@ -59,7 +59,7 @@ installctags() {
 }
 
 linknvim() {
-  ln -s $(pwd)/nvim ~/.config/nvim
+  ln -s $(git rev-parse --show-toplevel)/nvim ~/.config/nvim
 }
 
 # Welcome
@@ -86,6 +86,9 @@ nvim --headless +PlugInstall +CocUpdate +qall > /dev/null 2>&1
 
 # Create symbolic link to nvim folder
 [[ -d "$HOME/.config/nvim" ]] && echo 'nvim folder exists, moving on...'|| linknvim
+
+# Reload .bashrc
+source ~/.bashrc
 
 echo '==================='
 echo 'Done!'
