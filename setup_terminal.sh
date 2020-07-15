@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -o nounset    # error when referencing undefined variable
+set -o errexit    # exit when command fails
+
 # Welcome
 echo '[Setting up Nerdfont]'
 echo '==================='

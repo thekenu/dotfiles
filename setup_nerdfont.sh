@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -o nounset    # error when referencing undefined variable
+set -o errexit    # exit when command fails
+
 ttf="Ubuntu Mono Nerd Font Complete.ttf"
 
 installcurl() {
