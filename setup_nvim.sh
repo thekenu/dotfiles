@@ -4,17 +4,17 @@ set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
 installnvim() {
-  sudo apt install neovim python3-neovim
+  sudo apt install -y neovim python3-neovim
 }
 
-installpip() {
+installpip3() {
   echo "Installing pip3..."
-  sudo apt install python3-pip > /dev/null
+  sudo apt install -y python3-pip > /dev/null
 }
 
 installnode() {
   echo "Installing node..."
-  sudo apt install nodejs npm
+  sudo apt install -y nodejs npm
   sudo npm i -g neovim
 }
 
@@ -24,7 +24,7 @@ installfzf() {
 }
 
 installripgrep() {
-  sudo apt-get install ripgrep
+  sudo apt-get install -y ripgrep
 }
 
 linknvim() {
@@ -38,8 +38,8 @@ echo '==================='
 # Install nvim with Python3 support
 which nvim > /dev/null && echo 'nvim installed, moving on...' || installnvim
 
-# Install pip
-which pip3 > /dev/null && echo 'pip installed, moving on...' || installpip
+# Install pip3
+which pip3 > /dev/null && echo 'pip3 installed, moving on...' || installpip3
 
 # Install node and neovim support
 which node > /dev/null && echo 'node installed, moving on...' || installnode
