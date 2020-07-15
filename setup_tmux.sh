@@ -19,14 +19,21 @@ installtpm() {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+linktmuxconfcommon() {
+  ln -s $(pwd)/.tmux.conf.common ~/.tmux.conf.common
+}
+
 linktmuxconf() {
-  ln -s $(pwd)/.tmux.conf ~/
+  touch ~/.tmux.conf
 
   # Enable Powerline for Tmux:
   # https://powerline.readthedocs.io/en/latest/usage/other.html?highlight=tmux#tmux-statusline
   string=$(pip3 show powerline-status | grep Location | cut -d " " -f 2)
   string='source '$string'/powerline/bindings/tmux/powerline.conf'
-  echo $string >> $(pwd)/.tmux.conf
+  echo $string > ~/.tmux.conf
+
+  echo "" >> ~/.tmux.conf
+  echo "source-file ~/.tmux.conf.common" >> ~/.tmux.conf
 }
 
 # Welcome
@@ -46,6 +53,7 @@ pip3 show powerline-status > /dev/null && echo 'powerline installed, moving on..
 [[ -d "$HOME/.tmux/plugins/tpm" ]] && echo 'tpm installed, moving on' || installtpm
 
 # Copy over tmux.conf
+[[ -f "$HOME/.tmux.conf.common" ]] && echo '.tmux.conf.common exists, moving on...'|| linktmuxconfcommon
 [[ -f "$HOME/.tmux.conf" ]] && echo '.tmux.conf exists, moving on...'|| linktmuxconf
 
 echo ""
