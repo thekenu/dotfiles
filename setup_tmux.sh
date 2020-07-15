@@ -7,8 +7,22 @@ installtmux() {
   sudo apt-get install tmux
 }
 
+installpip3() {
+  sudo apt install -y python3-pip > /dev/null
+}
+
+installpowerline() {
+  sudo pip3 install powerline-status
+}
+
 linktmuxconf() {
   ln -s $(pwd)/.tmux.conf ~/
+
+  # Enable Powerline for Tmux:
+  # https://powerline.readthedocs.io/en/latest/usage/other.html?highlight=tmux#tmux-statusline
+  string=$(pip3 show powerline-status | grep Location | cut -d " " -f 2)
+  string=$string'/powerline/bindings/tmux/powerline.conf'
+  echo $string >> $(pwd)/.tmux.conf
 }
 
 # Welcome
@@ -17,6 +31,12 @@ echo '==================='
 
 # Install nvim with Python3 support
 which tmux > /dev/null && echo 'tmux installed, moving on...' || installtmux
+
+# Install pip3
+which pip3 > /dev/null && echo 'pip3 installed, moving on...' || installpip3
+
+# Instal powerline
+pip3 show powerline-status > /dev/null && echo 'powerline installed, moving on...' || installpowerline
 
 # Copy over tmux.conf
 [[ -f "$HOME/.tmux.conf" ]] && echo '.tmux.conf exists, moving on...'|| linktmuxconf
