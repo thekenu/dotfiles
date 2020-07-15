@@ -48,10 +48,10 @@ pip3 show powerline-status > /dev/null && echo 'powerline installed, moving on..
 # Copy over tmux.conf
 [[ -f "$HOME/.tmux.conf" ]] && echo '.tmux.conf exists, moving on...'|| linktmuxconf
 
-# Doesn't hurt to source .tmux.conf multiple times
-tmux source ~/.tmux.conf || echo 'tmux source failed, did you run this inside tmux?' && exit 1
-
-echo "Don't forget to prefix + I to insetall tmux plugins"
+echo ""
+echo "Don't forget to do the following!"
+echo "  1. tmux source ~/.tmux.conf"
+echo "  2. Use prefix + I to install tmux plugins"
 
 echo '==================='
 echo 'Done!'
