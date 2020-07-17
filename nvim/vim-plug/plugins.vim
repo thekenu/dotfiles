@@ -68,8 +68,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "
     Plug 'junegunn/rainbow_parentheses.vim'
 
-    "
-    Plug 'sakhnik/nvim-gdb', { 'branch': 'legacy' }
+    " Debugger
+    Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 
     "
     Plug 'christoomey/vim-tmux-navigator'
