@@ -3,6 +3,16 @@
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
+installi3lock-color() {
+  git clone https://github.com/Raymo111/i3lock-color.git ~/i3lock-color
+  cd ~/i3lock-color
+  git tag -f "git-$(git rev-parse --short HEAD)"
+  chmod +x ./build.sh && ./build.sh
+  chmod +x ./install-i3lock-color.sh && ./install-i3lock-color.sh
+  cd -
+  rm -rf ~/i3lock-color
+}
+
 installpackages() {
   if ! find /etc/apt/ -name *.list | xargs cat | grep "^[[:space:]]*deb" | \
        grep -q "kgilmer/speed-ricer"; then
@@ -15,6 +25,8 @@ installpackages() {
     which $package > /dev/null && echo $package 'installed, moving on...' \
       || sudo apt install -y $package
   done
+
+  which i3lock > /dev/null && echo 'i3lock installed, moving on...' || installi3lock-color
 }
 
 linkconfigs() {

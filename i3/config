@@ -185,5 +185,5 @@ exec_always feh --bg-scale /home/thekenu/dotfiles/wallpaper/christina-maiia-cwcd
 for_window [class="^.*"] border pixel 3
 
 # bindsym
-bindsym $mod+Shift+x exec i3lock --color 475263
+bindsym $mod+Shift+x exec ~/.config/i3/lock.sh
 bindsym Print exec gnome-screenshot -i
