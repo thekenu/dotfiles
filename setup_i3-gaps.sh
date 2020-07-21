@@ -10,23 +10,19 @@ installpackages() {
     sudo apt update
   fi
 
-  for package in i3 pavucontrol pasystray rofi compton i3blocks screentfetch
+  for package in i3 pavucontrol pasystray rofi compton i3blocks screenfetch
   do
     which $package > /dev/null && echo $package 'installed, moving on...' \
-      || sudo apt install $package
+      || sudo apt install -y $package
   done
 }
 
-linki3() {
-  ln -s $(git rev-parse --show-toplevel)/i3 ~/.config/i3
-}
-
-linkrofi() {
-  ln -s $(git rev-parse --show-toplevel)/rofi ~/.config/rofi
-}
-
-linkcompton() {
-  ln -s $(git rev-parse --show-toplevel)/compton ~/.config/compton
+linkconfigs() {
+  for name in i3 rofi compton
+  do
+    [[ -d "$HOME/.config/"$name ]] && echo $name' folder exists, moving on...' \
+      || ln -s $(git rev-parse --show-toplevel)/$name ~/.config/$name
+  done
 }
 
 # Welcome
@@ -34,10 +30,7 @@ echo '[Setting up i3-gaps]'
 echo '==================='
 
 installpackages
-
-[[ -d "$HOME/.config/i3" ]] && echo 'i3 folder exists, moving on...'|| linki3
-[[ -d "$HOME/.config/rofi" ]] && echo 'rofi folder exists, moving on...'|| linkrofi
-[[ -d "$HOME/.config/compton" ]] && echo 'compton folder exists, moving on...'|| linkcompton
+linkconfigs
 
 echo '==================='
 echo 'Done!'
