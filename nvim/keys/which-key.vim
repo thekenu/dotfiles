@@ -45,6 +45,7 @@ nnoremap <silent> <leader>pr  :echo @%<CR>
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
+      \ 'h' : [':ColorToggle'            , 'color code' ],
       \ 'h' : [':set hls!'               , 'highlight' ],
       \ 'l' : [':Limelight!!'            , 'limelight' ],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],

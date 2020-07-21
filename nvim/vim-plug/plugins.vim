@@ -87,4 +87,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Close buffer without closing window
     Plug 'moll/vim-bbye'
+
+    Plug 'chrisbra/Colorizer'
 call plug#end()
