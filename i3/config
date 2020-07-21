@@ -204,3 +204,5 @@ exec_always feh --bg-scale /home/thekenu/dotfiles/wallpaper/christina-maiia-cwcd
 # "Gaps will only work correctly if you disable window titlebars entirely" 
 # - from the i3 gaps readme.
 for_window [class="^.*"] border pixel 3
+
+bindsym Print exec gnome-screenshot -i
