@@ -10,7 +10,7 @@ installpackages() {
     sudo apt update
   fi
 
-  for package in i3 pavucontrol pasystray rofi compton i3blocks
+  for package in i3 pavucontrol pasystray rofi compton i3blocks screentfetch
   do
     which $package > /dev/null && echo $package 'installed, moving on...' \
       || sudo apt install $package
