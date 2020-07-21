@@ -168,7 +168,7 @@ bar {
 gaps inner 10
 gaps outer 10
 
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec i3lock --color 475263
 
 exec spotify
 exec_always xrandr --output eDP-1 --off
