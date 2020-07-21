@@ -52,6 +52,7 @@ let g:which_key_map.t = {
       \ 't' : [':FloatermToggle'         , 'terminal'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
       \ 'R' : [':RainbowParentheses!!'   , 'rainbow parentheses'],
+      \ 'w' : [':set wrap!'              , 'line wrap'],
       \ 'z' : [':Goyo'                   , 'goyo'],
       \ }
 

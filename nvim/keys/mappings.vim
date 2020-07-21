@@ -41,5 +41,5 @@ tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
 
 " Search and replace the word under cursor or the visual selection
-nnoremap <leader>r :%s/<C-R>=expand("<cword>")<CR>//gIc<left><left><left>
+nnoremap <leader>r :%s/<C-R>=expand("<cword>")<CR>//gIc<left><left><left><left>
 vnoremap <leader>r "hy:%s/<C-r>h//gIc<left><left><left>
