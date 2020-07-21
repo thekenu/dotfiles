@@ -25,6 +25,10 @@ linkrofi() {
   ln -s $(git rev-parse --show-toplevel)/rofi ~/.config/rofi
 }
 
+linkcompton() {
+  ln -s $(git rev-parse --show-toplevel)/compton ~/.config/compton
+}
+
 # Welcome
 echo '[Setting up i3-gaps]'
 echo '==================='
@@ -33,6 +37,7 @@ installpackages
 
 [[ -d "$HOME/.config/i3" ]] && echo 'i3 folder exists, moving on...'|| linki3
 [[ -d "$HOME/.config/rofi" ]] && echo 'rofi folder exists, moving on...'|| linkrofi
+[[ -d "$HOME/.config/compton" ]] && echo 'compton folder exists, moving on...'|| linkcompton
 
 echo '==================='
 echo 'Done!'

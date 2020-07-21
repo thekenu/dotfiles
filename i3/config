@@ -194,7 +194,7 @@ exec --no-startup-id spotify
 exec --no-startup-id discord
 exec --no-startup-id blueman-applet
 exec --no-startup-id pasystray
-exec --no-startup-id compton
+exec compton --config ~/.config/compton/compton.conf
 
 exec_always xrandr --output eDP-1 --off
 exec_always xrandr --output DP-1-1 --size 2560x1440 --auto
