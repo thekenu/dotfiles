@@ -20,7 +20,8 @@ installpackages() {
     sudo apt update
   fi
 
-  for package in i3-gaps pavucontrol pasystray rofi compton i3blocks screenfetch
+  for package in i3-gaps pavucontrol pasystray rofi compton i3blocks \
+    screenfetch feh blueman
   do
     which $package > /dev/null && echo $package 'installed, moving on...' \
       || sudo apt install -y $package

@@ -73,6 +73,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # descriptive workspace names
+set $workspace1 "1  "
+set $workspace2 "2  "
 set $workspace9 "9  "
 set $workspace10 "10  "
 
@@ -81,8 +83,8 @@ for_window [class="discord"] move to workspace $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
@@ -93,8 +95,8 @@ bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
