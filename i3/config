@@ -58,11 +58,6 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -75,17 +70,20 @@ bindsym $mod+a focus parent
 # descriptive workspace names
 set $workspace1 "1  "
 set $workspace2 "2  "
+set $workspace3 "3  "
 set $workspace9 "9  "
 set $workspace10 "10  "
 
 # make sure certain applications open in desired workspace
+for_window [class="Firefox"] move to workspace $workspace2
+for_window [class="Google-chrome"] move to workspace $workspace3
 for_window [class="discord"] move to workspace $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -97,7 +95,7 @@ bindsym $mod+0 workspace $workspace10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -171,6 +169,7 @@ gaps inner 10
 gaps outer 10
 
 # exec
+exec --no-startup-id firefox
 exec --no-startup-id spotify
 exec --no-startup-id discord
 exec --no-startup-id blueman-applet
@@ -182,10 +181,10 @@ exec_always xrandr --output eDP-1 --off
 exec_always xrandr --output DP-1-1 --size 2560x1440 --auto
 exec_always feh --bg-scale /home/thekenu/dotfiles/wallpaper/christina-maiia-cwcdoFVW8DQ-unsplash.jpg
 
-# "Gaps will only work correctly if you disable window titlebars entirely" 
-# - from the i3 gaps readme.
+# Gaps will only work correctly if you disable window titlebars entirely"
 for_window [class="^.*"] border pixel 3
 
 # bindsym
 bindsym $mod+Shift+x exec ~/.config/i3/lock.sh
 bindsym Print exec gnome-screenshot -i
+bindsym $mod+w exec firefox
