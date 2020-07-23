@@ -21,7 +21,7 @@ installpackages() {
   fi
 
   for package in i3-gaps pavucontrol pasystray rofi compton i3blocks \
-    screenfetch feh blueman dunst
+    screenfetch feh blueman dunst maim
   do
     which $package > /dev/null && echo $package 'installed, moving on...' \
       || sudo apt install -y $package
