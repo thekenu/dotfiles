@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x5-0+30"
+    geometry = "500x5-0+30"
     indicate_hidden = yes
     shrink = yes
     transparency = 10
@@ -24,7 +24,7 @@
     sort = yes
 
     idle_threshold = 120
-    font = Ubuntu Mono Nerd Font 20
+    font = Ubuntu Mono Nerd Font 14
     line_height = 0
     markup = full
 

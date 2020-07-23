@@ -188,4 +188,5 @@ for_window [class="^.*"] border pixel 3
 bindsym $mod+Shift+x exec ~/.config/i3/lock.sh
 bindsym Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 -p 10 -q -u -b 2 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 bindsym Shift+Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 -p 10 -q -u -b 2 /dev/stdout | xclip -selection clipboard -t image/png"
+bindsym Shift+Ctrl+Print exec ~/dotfiles/i3/record-screen.sh
 bindsym $mod+w exec firefox
