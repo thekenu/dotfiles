@@ -190,3 +190,10 @@ bindsym Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 
 bindsym Shift+Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 -p 10 -q -u -b 2 /dev/stdout | xclip -selection clipboard -t image/png"
 bindsym Shift+Ctrl+Print exec ~/dotfiles/i3/record-screen.sh
 bindsym $mod+w exec firefox
+
+# volume control
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
+bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+for_window [class="Yad"] floating enable
