@@ -151,7 +151,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar
 bar {
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command SCRIPT_DIR=/home/thekenu/.config/i3blocks/ i3blocks -c ~/.config/i3/i3blocks.conf
   position top
 	colors {
 		background $bg-color
@@ -192,8 +192,8 @@ bindsym Shift+Ctrl+Print exec ~/dotfiles/i3/record-screen.sh
 bindsym $mod+w exec firefox
 
 # volume control
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 for_window [class="Yad"] floating enable
