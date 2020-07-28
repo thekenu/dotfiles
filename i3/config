@@ -181,14 +181,15 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # exec_always
 exec_always feh --bg-scale /home/thekenu/dotfiles/wallpaper/christina-maiia-cwcdoFVW8DQ-unsplash.jpg
 
-# Gaps will only work correctly if you disable window titlebars entirely"
+# gaps will only work correctly if you disable window titlebars entirely"
 for_window [class="^.*"] border pixel 3
 
-# bindsym
-bindsym $mod+Shift+x exec ~/.config/i3/lock.sh
+# print/record screen
 bindsym Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 -p 10 -q -u -b 2 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 bindsym Shift+Print --release exec --no-startup-id "maim --format png -s -c 1,0,0,0.6 -p 10 -q -u -b 2 /dev/stdout | xclip -selection clipboard -t image/png"
 bindsym Shift+Ctrl+Print exec ~/dotfiles/i3/record-screen.sh
+
+# browser
 bindsym $mod+w exec firefox
 
 # volume control
@@ -196,4 +197,21 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -R
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
+# floating window for calendar
 for_window [class="Yad"] floating enable
+
+# shutdown menu
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id ~/.config/i3/i3exit lock, mode "default"
+    bindsym e exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/.config/i3/i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Delete mode "$mode_system"
