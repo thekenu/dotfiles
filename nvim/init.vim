@@ -7,6 +7,7 @@ source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/themes/dbc.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
 source $HOME/.config/nvim/plug-config/vim-commentary.vim
+source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/limelight.vim
 source $HOME/.config/nvim/plug-config/rainbow_parentheses.vim
