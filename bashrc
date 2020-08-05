@@ -6,3 +6,5 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # Set the default editor
 export EDITOR="nvim"
+
+alias n='nvim'
