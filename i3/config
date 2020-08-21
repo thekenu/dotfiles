@@ -205,10 +205,10 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 for_window [class="Yad"] floating enable
 
 # shutdown menu
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (g) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id ~/.config/i3/i3exit lock, mode "default"
-    bindsym e exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
+    bindsym g exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
     bindsym s exec --no-startup-id ~/.config/i3/i3exit suspend, mode "default"
     bindsym h exec --no-startup-id ~/.config/i3/i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id ~/.config/i3/i3exit reboot, mode "default"
