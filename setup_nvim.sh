@@ -78,8 +78,8 @@ which node > /dev/null && echo 'node installed, moving on...' || installnode
 # Install extra dependecies
 which fzf > /dev/null && echo 'fzf installed, moving on...' || installfzf
 which rg > /dev/null && echo 'rg installed, moving on...' || installripgrep
-which ccls > /dev/null && echo 'ccls installed, moving on...' || installccls
-which ctags > /dev/null && echo 'ctags installed, moving on...' || installctags
+# which ccls > /dev/null && echo 'ccls installed, moving on...' || installccls
+# which ctags > /dev/null && echo 'ctags installed, moving on...' || installctags
 
 # Install nvim plugins
 nvim --headless +PlugInstall +CocUpdate +qall > /dev/null 2>&1
