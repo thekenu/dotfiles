@@ -18,3 +18,5 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 " Hack-y solution to avoid .ideavimrc from loading in CoC settings
 exe "source $HOME/.config/nvim/plug-config/coc.vim" 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+source $HOME/.config/nvim/my-google-config.vim
