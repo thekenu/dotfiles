@@ -1,4 +1,4 @@
-{  
+{
   "python.jediEnabled": false,
   "languageserver": {
     "cmake": {
@@ -11,15 +11,10 @@
         "buildDirectory": "build"
       }
     },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++"],
-      "rootPatterns": [".ccls", "compile_commands.json", "compile_commands2.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-         "cache": {
-           "directory": "/tmp/ccls"
-         }
-       }
+    "ciderlsp": {
+      "command": "/google/bin/releases/editor-devtools/ciderlsp",
+      "args": ["--tooltag=coc-nvim", "--noforward_sync_responses"],
+      "filetypes": ["c", "cc", "cpp", "go", "proto", "textproto"]
     }
  },
  "explorer.width": 30,
