@@ -11,10 +11,10 @@
         "buildDirectory": "build"
       }
     },
-    "ciderlsp": {
-      "command": "/google/bin/releases/editor-devtools/ciderlsp",
-      "args": ["--tooltag=coc-nvim", "--noforward_sync_responses"],
-      "filetypes": ["c", "cc", "cpp", "go", "proto", "textproto"]
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "/usr/local/google/home/thekenu/compile_commands.actuation_tier_all.json.bak"],
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     }
  },
  "explorer.width": 30,
