@@ -89,4 +89,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'moll/vim-bbye'
 
     Plug 'chrisbra/Colorizer'
+
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
