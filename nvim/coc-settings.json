@@ -1,4 +1,4 @@
-{  
+{
   "python.jediEnabled": false,
   "languageserver": {
     "cmake": {

@@ -14,6 +14,7 @@ source $HOME/.config/nvim/plug-config/rainbow_parentheses.vim
 source $HOME/.config/nvim/plug-config/vim-tmux-navigator.vim
 source $HOME/.config/nvim/plug-config/vista.vim
 source $HOME/.config/nvim/plug-config/lens.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
 " Hack-y solution to avoid .ideavimrc from loading in CoC settings
 exe "source $HOME/.config/nvim/plug-config/coc.vim" 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

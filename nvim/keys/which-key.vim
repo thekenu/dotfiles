@@ -92,6 +92,8 @@ let g:which_key_map.w = {
       \ 'r' : ['<C-W>R' , 'rotate windows'] ,
       \ 'z' : [':MaximizerToggle', 'zoom current window'] ,
       \ '=' : ['<C-W>=' , 'balance windows']     ,
+      \ '+' : [':vertical resize +5' , 'increase window width'] ,
+      \ '-' : [':vertical resize -5' , 'decrease window width'] ,
       \ }
 
 " s is for search
