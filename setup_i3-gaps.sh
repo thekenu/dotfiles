@@ -30,11 +30,11 @@ installi3blocks() {
 installpackages() {
   if ! find /etc/apt/ -name *.list | xargs cat | grep "^[[:space:]]*deb" | \
        grep -q "kgilmer/speed-ricer"; then
-    # sudo add-apt-repository ppa:kgilmer/speed-ricer
+    sudo add-apt-repository ppa:kgilmer/speed-ricer
     sudo apt update
   fi
 
-  for package in pavucontrol pasystray rofi compton \
+  for package in i3-gaps pavucontrol pasystray rofi compton \
     screenfetch feh blueman dunst maim byzanz yad xdotool
   do
     which $package > /dev/null && echo $package 'installed, moving on...' \
