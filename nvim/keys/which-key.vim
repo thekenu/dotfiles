@@ -94,6 +94,8 @@ let g:which_key_map.w = {
       \ '=' : ['<C-W>=' , 'balance windows']     ,
       \ '+' : [':vertical resize +5' , 'increase window width'] ,
       \ '-' : [':vertical resize -5' , 'decrease window width'] ,
+      \ ']' : [':resize +5' , 'increase window height'] ,
+      \ '[' : [':resize -5' , 'decrease window height'] ,
       \ }
 
 " s is for search
